@@ -1,0 +1,13 @@
+TODO
+
+- Find list of artists (+ genres)
+
+- Search artist on setlist.fm, get artist page
+- paginate to get all links to all set list in 2014
+- get songs from all the set lists
+
+- get artist page in discogs
+- paginate to get all album links
+- in each album extract all songs
+
+Block 2 and 3 could use the same code: Connector + paginate chain API
