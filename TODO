@@ -1,6 +1,6 @@
 TODO
 
-- Find list of artists (+ genres)
+- Find list of artists (+ genres) -> will use this as source http://en.wikipedia.org/wiki/Category:Lists_of_musicians_by_genre
 
 - Search artist on setlist.fm, get artist page
 - paginate to get all links to all set list in 2014
