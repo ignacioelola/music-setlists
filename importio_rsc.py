@@ -12,7 +12,8 @@ import inspect
 
 
 # Function to read your credentials.
-# Credentials need to be in a JSON file in the format:
+# Credentials need to be in a JSON file called auth_credentials.json
+#  in the format:
 # {
 # "userGuid": YOUR-USER-GUID,
 # "apiKey": YOUR-API-KEY
@@ -34,7 +35,7 @@ def paginate_url(url, page):
 
 # Function to query the REST API
 def query_api(query,
-              connector_guid,
+              api_guid,
               page=None,
               endpoint="http://api.import.io/store/connector/"):
 
@@ -48,22 +49,20 @@ def query_api(query,
 
     try:
         r = requests.post(
-            endpoint + connector_guid + "/_query?_user=" + auth_credentials["userGuid"] + "&_apikey=" + urllib.quote_plus(
+            endpoint + api_guid + "/_query?_user=" + auth_credentials["userGuid"] + "&_apikey=" + urllib.quote_plus(
                 auth_credentials["apiKey"]),
             data=json.dumps(query), timeout=timeout)
         rok = r.ok
         rstatus_code = r.status_code
         rtext = r.text
-        response_time = r.elapsed.total_seconds()
     except:
-        response_time = timeout
         rok = False
         rstatus_code = 000
         rtext = "exception"
 
     if rok is True and rstatus_code == 200 and "errorType" not in r.json():
         results = r.json()
-        return results, response_time, 0
+        return results
     else:
         print "Error %s, %s on page %s , Retrying now (1)..." % (rstatus_code, rtext, query["input"]["webpage/url"])
         sys.stdout.flush()
@@ -71,28 +70,29 @@ def query_api(query,
 
         try:
             r = requests.post(
-                endpoint + connector_guid + "/_query?_user=" + auth_credentials["userGuid"] + "&_apikey=" + urllib.quote_plus(
+                endpoint + api_guid + "/_query?_user=" + auth_credentials["userGuid"] + "&_apikey=" + urllib.quote_plus(
                     auth_credentials["apiKey"]),
                 data=json.dumps(query), timeout=timeout)
             rok = r.ok
             rstatus_code = r.status_code
             rtext = r.text
-            response_time = r.elapsed.total_seconds()
 
         except:
-            response_time = timeout
             rok = False
             rstatus_code = 000
             rtext = "exception"
 
         if rok is True and rstatus_code == 200 and "errorType" not in r.json():
             results = r.json()
-            return results, response_time, 1
+            return results
         else:
             print "Error %s, %s on page %s , Could not complete the query" % (rstatus_code, rtext, query["input"]["webpage/url"])
             sys.stdout.flush()
             try:
                 error = json.loads(r.content)["error"]
             except:
-                error = rstatus_code
-            return error, response_time, False
+                try:
+                    error = r.status_code
+                except:
+                    error = "0"
+            return error
