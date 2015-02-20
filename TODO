@@ -6,6 +6,8 @@ TODO
   guid2 = 68f6efda-85f3-41f7-b252-77e1aadb7c3c
   guid3 = ff4c3352-0ba6-4428-8ec3-9c5b00d58aa8
 
+  - Some lists of lists also contains lists (example: http://en.wikipedia.org/wiki/Lists_of_blues_musicians_by_genre0 I need 3 levels extractor!
+
 - Search artist on setlist.fm, get artist page
 - paginate to get all links to all set list in 2014
 - get songs from all the set lists
