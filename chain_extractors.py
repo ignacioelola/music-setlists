@@ -16,7 +16,7 @@ def get_data(guid_level_1, guid_level_2, start_url):
     all_results = []
     for result in response_level_1["results"]:
         source_url_level_2 = result["url"]
-        print source_url_level_2
+        print "Querying %s" % source_url_level_2
         query_level_2 = {"input": {"webpage/url": source_url_level_2}}
         response_level_2 = importio_rsc.query_api(query_level_2, guid_level_2)
 
