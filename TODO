@@ -1,16 +1,9 @@
 TODO
 
-- Find list of artists (+ genres) 
-  -> will use this as source http://en.wikipedia.org/wiki/Category:Lists_of_musicians_by_genre
-  guid1 = 0a7ccd62-377f-4b94-aca0-c74a78984b6b
-  guid2 = 68f6efda-85f3-41f7-b252-77e1aadb7c3c
-  guid3 = ff4c3352-0ba6-4428-8ec3-9c5b00d58aa8
+- Third layer extraction on wikipeida is buggy, and the code should improve. Second extractor also don't extract correctly http://en.wikipedia.org/wiki/List_of_blues_rock_musicians and make the app crash when training
 
-  - Some lists of lists also contains lists (example: http://en.wikipedia.org/wiki/Lists_of_blues_musicians_by_genre0 I need 3 levels extractor -> I will edit the existing APIs to get those links in a new column. Then get_musicians.py shoudl check if the new links column exist, and if so, do the extra query to get those results before passing all results to the save function.
-
-- Search artist on setlist.fm, get artist page
-- paginate to get all links to all set list in 2014
-- get songs from all the set lists
+- Connector to get links to the setlists (including pagination) 5d52fe9d-6dc5-4a56-b6cb-a0e5e65042c2
+- Extractor to get songs from a setlist b1a10a4c-2be2-4266-a145-25ae51730627
 
 - get artist page in discogs
 - paginate to get all album links
