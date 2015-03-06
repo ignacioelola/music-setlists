@@ -7,7 +7,7 @@ __author__ = 'ignacioelola'
 import importio_rsc
 
 
-def get_data(guid_level_1, guid_level_2, start_url):
+def get_data(guid_level_1, guid_level_2, start_url, save_data_class=None):
 
     query_level_1 = {"input": {"webpage/url": start_url}}
 
@@ -22,8 +22,14 @@ def get_data(guid_level_1, guid_level_2, start_url):
 
         results_level_2 = response_level_2.get("results")
 
-        all_results.append({"url": source_url_level_2,
-                            "url/_text": result["url/_text"],
-                            "results": results_level_2})
+        if save_data_class:
+            save_data_class.save_result({"url": source_url_level_2,
+                                         "url/_text": result["url/_text"],
+                                         "results": results_level_2})
+        else:
+            all_results.append({"url": source_url_level_2,
+                                "url/_text": result["url/_text"],
+                                "results": results_level_2})
 
-    return all_results
+    if not save_data_class:
+        return all_results
