@@ -47,6 +47,7 @@ def get_inputs(infile):
             if row_count > 0:
                 if "list of" not in row[1].lower() and "lists of" not in row[1].lower():
                     inputs.append(row[1])
+    clean_inputs = set(inputs)
     return inputs
 
 
