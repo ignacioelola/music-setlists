@@ -1,12 +1,7 @@
 TODO
 
-- Third layer extraction on wikipeida is buggy, and the code should improve. Second extractor also don't extract correctly http://en.wikipedia.org/wiki/List_of_blues_rock_musicians and make the app crash when training
-
-- Connector to get links to the setlists (including pagination) 5d52fe9d-6dc5-4a56-b6cb-a0e5e65042c2
-- Extractor to get songs from a setlist b1a10a4c-2be2-4266-a145-25ae51730627
+- Third layer extraction on wikipeida is buggy, and the code should improve. Second extractor also don't extract correctly http://en.wikipedia.org/wiki/List_of_blues_rock_musicians and make the app crash when training. There are still lists in the musiciansa file.
 
 - get artist page in discogs
 - paginate to get all album links
 - in each album extract all songs
-
-Block 2 and 3 could use the same code: Connector + paginate chain API
