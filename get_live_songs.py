@@ -20,9 +20,9 @@ class SaveData():
         self.filename = file1
 
         # Write headers in the files (as well as blank them if they exist)
-        with open(self.filename, "w") as infile:
-            writer = csv.writer(infile)
-            writer.writerow(["musician", "show", "year", "song"])
+        # with open(self.filename, "w") as infile:
+        #     writer = csv.writer(infile)
+        #     writer.writerow(["musician", "show", "year", "song"])
 
     def save_result(self, result):
 
@@ -44,7 +44,7 @@ def get_inputs(infile):
     with open(infile, "r") as f:
         reader = csv.reader(f)
         for row_count, row in enumerate(reader):
-            if row_count > 0:
+            if row_count > 15:  # Work in progress
                 if "list of" not in row[1].lower() and "lists of" not in row[1].lower():
                     inputs.append(row[1])
     clean_inputs = set(inputs)
