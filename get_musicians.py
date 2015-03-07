@@ -3,7 +3,7 @@
 __author__ = 'ignacioelola'
 
 import csv
-import chain_extractors
+import chain_apis
 import importio_rsc
 
 
@@ -76,7 +76,7 @@ def main():
     data_savior.initialize_files(output_filename)
 
     # Get list of musicians by genre
-    chain_apis_results = chain_extractors.get_data(guid_level_1, guid_level_2, source_url, data_savior)
+    chain_apis_results = chain_apis.get_data(guid_level_1, guid_level_2, source_url, data_savior)
 
 
 if __name__ == '__main__':
