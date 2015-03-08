@@ -44,7 +44,7 @@ def get_inputs(infile):
     with open(infile, "r") as f:
         reader = csv.reader(f)
         for row_count, row in enumerate(reader):
-            if row_count > 505:
+            if row_count > 896:
                 if "list of" not in row[1].lower() and "lists of" not in row[1].lower():
                     inputs.append(row[1])
     clean_inputs = set(inputs)
