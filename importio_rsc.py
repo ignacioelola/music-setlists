@@ -87,7 +87,7 @@ def query_api(query,
                     error = r.status_code
                 except:
                     error = "0"
-            return error
+            return {}
 
 def query_api_comet(query, api_guid):
 
