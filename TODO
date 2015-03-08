@@ -5,3 +5,12 @@ TODO
 - get artist page in discogs
 - paginate to get all album links
 - in each album extract all songs
+
+
+
+Analysis:
+- structure genre - musician - year - show - songs
+- # different songs per musician - rank them
+- avg # of different songs per genre
+- Hard working / best memory artists VS lazy artists
+- Model to predict songs of Lazy artists
