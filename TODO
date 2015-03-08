@@ -7,10 +7,14 @@ TODO
 - in each album extract all songs
 
 
-
+Cleaning:
+- Check that musician = musician from show
+- One musician in multiple genres think about structure (musician -> genre or genre -> musician)
 Analysis:
 - structure genre - musician - year - show - songs
 - # different songs per musician - rank them
 - avg # of different songs per genre
 - Hard working / best memory artists VS lazy artists
 - Model to predict songs of Lazy artists
+- Which musical genre has more heterogenity in lazyness
+- Clustering musical genres, discovering grouups of artists
