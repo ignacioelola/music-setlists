@@ -36,5 +36,5 @@ class latch(object):
 
     def await(self):
         with self.lock:
-            while self.count > 0:
-                self.lock.wait()
+            # while self.count > 0:
+                self.lock.wait(59)
