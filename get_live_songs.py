@@ -38,6 +38,7 @@ class SaveData():
                     writer = csv.writer(infile)
                     writer.writerow(new_row)
 
+
 def get_inputs(infile):
 
     inputs = []
@@ -49,7 +50,6 @@ def get_inputs(infile):
                     inputs.append(row[1])
     clean_inputs = set(inputs)
     return inputs
-
 
 
 def main():
